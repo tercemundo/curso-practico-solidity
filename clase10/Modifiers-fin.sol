@@ -18,7 +18,6 @@ contract Payables {
     }
 
     function withdraw() public onlyOwner {
-        require(msg.sender==charity,"Not the charity"); // chequea que se cumpla la condicion, sino manda el mensaje
         payable(charity).transfer(address(this).balance); // recibe una transferencia
     }
 }
